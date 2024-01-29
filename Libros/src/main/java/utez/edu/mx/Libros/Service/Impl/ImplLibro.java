@@ -51,6 +51,7 @@ public class ImplLibro implements ILibro {
 
     @Override
     @Transactional
+    
     public void delete(BeanLibro libros) {
         daoLibro.delete(libros);
     }
@@ -59,6 +60,7 @@ public class ImplLibro implements ILibro {
 
         
 String primeraLetraTitulo = String.valueOf(nombre.charAt(0));
+        
         String primeraLetraAutor = String.valueOf(nombreAutor.charAt(0)); 
         String primerasDosLetrasApellido = apellidoAutor.substring(0, Math.min(apellidoAutor.length(), 2));
         String fechaPublicacionStr = fechaPublicacion.substring(0,Math.min(fechaPublicacion.length(), 4));
