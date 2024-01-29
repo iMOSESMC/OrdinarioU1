@@ -23,6 +23,7 @@ public class ImplLibro implements ILibro {
         String folio = generateFolio(libros.getNombre(), libros.getNombreautor(), libros.getApellidoautor(), libros.getFechapublicacion(), String.valueOf(libros.getIsbn()));
 
         BeanLibro beanLibro = BeanLibro.builder()
+            
                 .id(libros.getId())
                 .nombre(libros.getNombre())
                 .isbn(libros.getIsbn())
@@ -55,9 +56,10 @@ public class ImplLibro implements ILibro {
     }
 
     private String generateFolio(String nombre, String nombreAutor, String apellidoAutor, String fechaPublicacion, String isbn) {
-        // Obtener las partes necesarias del folio
-        String primeraLetraTitulo = String.valueOf(nombre.charAt(0));
-        String primeraLetraAutor = String.valueOf(nombreAutor.charAt(0));
+
+        
+String primeraLetraTitulo = String.valueOf(nombre.charAt(0));
+        String primeraLetraAutor = String.valueOf(nombreAutor.charAt(0)); 
         String primerasDosLetrasApellido = apellidoAutor.substring(0, Math.min(apellidoAutor.length(), 2));
         String fechaPublicacionStr = fechaPublicacion.substring(0,Math.min(fechaPublicacion.length(), 4));
         String primerasCuatroLetrasIsbn = isbn.substring(0, Math.min(isbn.length(), 4));
@@ -69,11 +71,15 @@ public class ImplLibro implements ILibro {
     }
 
     private String generateRandomChars(int length) {
+        
         String characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < length; i++) {
+            
             int randomIndex = new Random().nextInt(characters.length());
+            
             sb.append(characters.charAt(randomIndex));
         }
 
